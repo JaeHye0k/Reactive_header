@@ -1,0 +1,92 @@
+:root{ /* CSS 변수 */
+  --text-color: #f0f4f5;
+  --background-color: #283593;
+  --accent-color: #ff8a80
+
+}
+body{
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 8px 12px;
+}
+.navbar ul{
+  list-style: none;
+}
+.navbar a{
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar_logo{
+  font-size: 24px;
+}
+.navbar_logo i{
+  color: var(--accent-color);
+}
+
+.navbar_menu{
+  display: flex;
+  padding-left: 0;
+}
+.navbar_menu li{
+  padding: 8px 12px;
+}
+.navbar_menu li:hover{
+  border-radius: 4px;
+  background-color: var(--accent-color);
+}
+
+.navbar_icons{
+  display: flex;
+  padding-left: 0;
+}
+.navbar_icons li{
+  padding: 8px 12px;
+}
+
+.navbar_hambuger{
+  display: none;
+  position: absolute;
+  right: 12px;
+  font-size: 30px;
+}
+.navbar_hambuger i{
+  color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px){
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;  /* 8px 12px 로 하면 양쪽 띄어짐(패딩 겹침?) */
+  }
+  .navbar_menu{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar_menu li{
+    width: 100%;
+    text-align: center;
+  }
+  .navbar_icons{
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar_hambuger{
+    display: flex;
+  }
+  .active{
+    display: flex;
+  }
+}
